@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const AboutSection = () => {
@@ -21,7 +21,7 @@ const AboutSection = () => {
               With decades of collective experience, our team blends traditional mining expertise 
               with forward-thinking approaches to create solutions that work for today and tomorrow.
             </p>
-            <Link to="/about">
+            <Link href="/about">
               <Button className="btn-primary">Learn More About Us</Button>
             </Link>
           </div>

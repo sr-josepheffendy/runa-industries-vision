@@ -72,7 +72,7 @@ const Header = () => {
               <span>{language}</span>
             </Button>
             <Button className="bg-primary text-white hover:bg-primary/90">
-              Get in Touch
+              <Link href="/contact" className="text-white">Get in Touch</Link>
             </Button>
           </div>
 

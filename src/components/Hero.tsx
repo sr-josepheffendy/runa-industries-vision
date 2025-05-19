@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -29,12 +29,12 @@ const Hero = () => {
             Shaping the future of Indonesia's industrial economy through sustainable mining, innovative engineering, and reliable equipment solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animate-delay-200">
-            <Link to="/contact">
+            <Link href="/contact">
               <Button className="btn-primary bg-primary hover:bg-primary/90 text-white text-lg">
                 Get in Touch
               </Button>
             </Link>
-            <Link to="/services">
+            <Link href="/services">
               <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 text-lg">
                 Explore Our Services
               </Button>
