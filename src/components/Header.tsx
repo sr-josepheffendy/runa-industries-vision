@@ -1,13 +1,17 @@
 
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("EN");
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,31 +36,31 @@ const Header = () => {
       <div className="container mx-auto container-padding">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-serif font-bold text-runaEarth z-10">
+          <Link href="/" className="text-2xl font-serif font-bold text-runaEarth z-10">
             Runa
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/" ? "font-medium" : ""}`}>
               Home
             </Link>
-            <Link to="/about" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/about" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/about" ? "font-medium" : ""}`}>
               About Us
             </Link>
-            <Link to="/services" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/services" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/services" ? "font-medium" : ""}`}>
               Our Services
             </Link>
-            <Link to="/industries" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/industries" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/industries" ? "font-medium" : ""}`}>
               Industries
             </Link>
-            <Link to="/why-runa" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/why-runa" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/why-runa" ? "font-medium" : ""}`}>
               Why Runa?
             </Link>
-            <Link to="/careers" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/careers" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/careers" ? "font-medium" : ""}`}>
               Careers
             </Link>
-            <Link to="/contact" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/contact" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/contact" ? "font-medium" : ""}`}>
               Contact
             </Link>
           </nav>
@@ -86,25 +90,25 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white z-40 md:hidden">
           <div className="flex flex-col h-full justify-center items-center space-y-8 py-8">
-            <Link to="/" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
-            <Link to="/about" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/about" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               About Us
             </Link>
-            <Link to="/services" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/services" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Our Services
             </Link>
-            <Link to="/industries" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/industries" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Industries
             </Link>
-            <Link to="/why-runa" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/why-runa" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Why Runa?
             </Link>
-            <Link to="/careers" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/careers" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Careers
             </Link>
-            <Link to="/contact" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/contact" className="text-2xl text-runaEarth hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
               Contact
             </Link>
             <div className="flex items-center space-x-4 mt-6">
@@ -112,7 +116,7 @@ const Header = () => {
                 <Globe className="h-5 w-5 mr-1" />
                 <span>{language}</span>
               </Button>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button className="bg-primary text-white hover:bg-primary/90" onClick={() => setIsMenuOpen(false)}>
                   Get in Touch
                 </Button>
