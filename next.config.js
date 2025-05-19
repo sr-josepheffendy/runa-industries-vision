@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // Enable the App Router
+  // Using the newer App Router by default
   experimental: {
     appDir: true
   },
