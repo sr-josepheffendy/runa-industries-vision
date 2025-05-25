@@ -1,5 +1,5 @@
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
@@ -8,19 +8,19 @@ const ServicesSection = () => {
       title: "Mining Operations",
       description: "Complete end-to-end mining solutions from exploration and planning to extraction and site management.",
       image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80",
-      link: "/services#mining"
+      link: "/services/mining"
     },
     {
       title: "Engineering Services",
       description: "Expert geological, civil, and environmental engineering to optimize operations and ensure compliance.",
       image: "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      link: "/services#engineering"
+      link: "/services/engineering"
     },
     {
       title: "Equipment Solutions",
       description: "Comprehensive fleet management, maintenance, and optimization for heavy equipment and specialized machinery.",
       image: "https://images.unsplash.com/photo-1627434231336-4b3a383a24cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      link: "/services#equipment"
+      link: "/services/equipment"
     }
   ];
 
@@ -48,7 +48,7 @@ const ServicesSection = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3 text-runaEarth">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
-                <Link href={service.link}>
+                <Link to={service.link}>
                   <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
                     Learn More
                   </Button>
@@ -59,7 +59,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Link href="/services">
+          <Link to="/services">
             <Button className="btn-primary">View All Our Services</Button>
           </Link>
         </div>

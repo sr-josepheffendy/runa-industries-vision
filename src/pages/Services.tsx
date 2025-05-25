@@ -1,12 +1,10 @@
 
-"use client";
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
-export default function Services() {
+const Services = () => {
   const services = [
     {
       id: "mining",
@@ -123,7 +121,7 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
+                  <Link to="/contact">
                     <Button className="btn-primary">Inquire About This Service</Button>
                   </Link>
                 </div>
@@ -152,7 +150,7 @@ export default function Services() {
               Discuss your project requirements with our team of experts and discover how Runa can 
               help you achieve your mining and engineering goals.
             </p>
-            <Link href="/contact">
+            <Link to="/contact">
               <Button className="btn-primary">Get in Touch</Button>
             </Link>
           </div>
@@ -162,4 +160,6 @@ export default function Services() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Services;

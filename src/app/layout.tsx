@@ -1,23 +1,28 @@
 
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import "../index.css";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Runa - Mining Reimagined',
-  description: 'Runa is a proud Indonesian company specializing in mining, engineering, and heavy equipment solutions. Shaping the future of Indonesia\'s industrial economy.',
-}
+export const metadata = {
+  title: "Runa - Mining Reimagined",
+  description: "Runa is a proud Indonesian company specializing in mining, engineering, and heavy equipment solutions. Shaping the future of Indonesia's industrial economy.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          {children}
+        </TooltipProvider>
+      </body>
     </html>
-  )
+  );
 }

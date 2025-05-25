@@ -1,13 +1,17 @@
 
+"use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState("EN");
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,25 +42,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/" ? "font-medium" : ""}`}>
               Home
             </Link>
-            <Link href="/about" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/about" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/about" ? "font-medium" : ""}`}>
               About Us
             </Link>
-            <Link href="/services" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/services" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/services" ? "font-medium" : ""}`}>
               Our Services
             </Link>
-            <Link href="/industries" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/industries" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/industries" ? "font-medium" : ""}`}>
               Industries
             </Link>
-            <Link href="/why-runa" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/why-runa" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/why-runa" ? "font-medium" : ""}`}>
               Why Runa?
             </Link>
-            <Link href="/careers" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/careers" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/careers" ? "font-medium" : ""}`}>
               Careers
             </Link>
-            <Link href="/contact" className="text-runaEarth hover:text-primary transition-colors">
+            <Link href="/contact" className={`text-runaEarth hover:text-primary transition-colors ${pathname === "/contact" ? "font-medium" : ""}`}>
               Contact
             </Link>
           </nav>
