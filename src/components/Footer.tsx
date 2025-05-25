@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -22,32 +22,32 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/industries" className="text-gray-300 hover:text-white transition-colors">
                   Industries We Serve
                 </Link>
               </li>
               <li>
-                <Link to="/why-runa" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/why-runa" className="text-gray-300 hover:text-white transition-colors">
                   Why Runa?
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/careers" className="text-gray-300 hover:text-white transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
@@ -59,27 +59,27 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services#mining" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services#mining" className="text-gray-300 hover:text-white transition-colors">
                   Mining Operations
                 </Link>
               </li>
               <li>
-                <Link to="/services#engineering" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services#engineering" className="text-gray-300 hover:text-white transition-colors">
                   Engineering Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/services#equipment" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services#equipment" className="text-gray-300 hover:text-white transition-colors">
                   Heavy Equipment
                 </Link>
               </li>
               <li>
-                <Link to="/services#geological" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services#geological" className="text-gray-300 hover:text-white transition-colors">
                   Geological Services
                 </Link>
               </li>
               <li>
-                <Link to="/services#consulting" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services#consulting" className="text-gray-300 hover:text-white transition-colors">
                   Industry Consulting
                 </Link>
               </li>
